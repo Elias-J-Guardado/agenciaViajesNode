@@ -1,6 +1,32 @@
 extends ./layout/index
 
 block contenido      
-    p= pagina  
+    main.container.mt-5
+        .row 
+            .col-md-5 
+                img(src="img/nosotros.jpg", alt="Sobre nosotros", class="img-fluid")
+            .col-md-7 
+                h1 #{pagina}
+                blockquote  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quis dignissim felis, et finibus orci. Cras quis justo ut ipsum eleifend volutpat eget vel mauris. Phasellus viverra odio sit amet risus euismod elementum. 
+                
+                p Nam a lacinia urna. Morbi tristique nisi vitae enim vulputate tincidunt. Vivamus pharetra efficitur est, quis porta ex eleifend non. Nulla ullamcorper, urna nec congue accumsan, tellus tortor pharetra quam, eu scelerisque magna odio ac mauris. Aliquam diam quam, laoreet sed pretium quis, aliquam vitae eros. Cras lobortis dictum nisi, sed suscipit turpis congue et.
 
-    img(src="img/cupon.jpg", alt="")
+                p Praesent luctus gravida libero in egestas. Donec lacinia sit amet eros id facilisis. Sed finibus, odio at euismod pulvinar, nisl lectus rhoncus nunc, eget congue magna mi sed felis. Sed sollicitudin mi in tortor fermentum convallis. Suspendisse nec elit sagittis, volutpat mauris sed, placerat nulla. Nulla vehicula tellus a tincidunt semper. Sed condimentum risus sit amet diam ultricies, id pharetra lacus blandit. Aenean ac ex congue tellus maximus auctor id id diam.
+
+    .listado-iconos
+        .container.mt-5.py-5.text-center 
+            .row
+                .col-md-4
+                    img(src="img/icono_seguridad.svg", alt="icono seguridad", class="img-fluid mb-4")
+                    h2.mb-4 Seguridad 
+                    p Aenean ac ex congue tellus maximus auctor id id diam.
+                
+                .col-md-4
+                    img(src="img/icono_destinos.svg", alt="icono destinos", class="img-fluid mb-4")
+                    h2.mb-4 Destino 
+                    p Aenean ac ex congue tellus maximus auctor id id diam.
+
+                .col-md-4
+                    img(src="img/icono_precios.svg", alt="icono precios", class="img-fluid mb-4")
+                    h2.mb-4 Los Mejores Precios 
+                    p Aenean ac ex congue tellus maximus auctor id id diam.
