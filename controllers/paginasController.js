@@ -1,8 +1,10 @@
+import { Viaje } from "../models/Viaje.js"
+
 const paginaInicio = (req, res) => { // req - lo que enviamos : res - lo que recibimos
     res.render('inicio', {
         pagina: 'Inicio'
     })
-} 
+}
 
 const paginaNosotros = (req, res) => { // req - lo que enviamos : res - lo que recibimos
     res.render('nosotros', {
@@ -10,19 +12,26 @@ const paginaNosotros = (req, res) => { // req - lo que enviamos : res - lo que r
     })
 }
 
-const paginaViajes =  (req, res) => { // req - lo que enviamos : res - lo que recibimos
+const paginaViajes = async (req, res) => { // req - lo que enviamos : res - lo que recibimos
+    //consultar base de datos
+    const viajes = await Viaje.findAll();
+    console.log(viajes);
+
+
+
     res.render('viajes', {
-        pagina: 'Viajes'
+        pagina: 'Próximos Viajes',
+        viajes
     })
 }
 
-const paginaTestimoniales = (req, res) => { // req - lo que enviamos : res - lo que recibimos
+const paginaTestimoniales = (req, res) => { // req - lo que enviamos : res - lo que recibimos 
     res.render('testimoniales', {
         pagina: 'Testimoniales'
     })
 }
 
-export{
+export {
     paginaInicio,
     paginaNosotros,
     paginaViajes,
