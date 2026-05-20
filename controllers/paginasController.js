@@ -1,5 +1,6 @@
 import { render } from "pug"
 import { Viaje } from "../models/Viaje.js"
+import { Testimonial } from "../models/Testimoniales.js"
 
 const paginaInicio = (req, res) => { // req - lo que enviamos : res - lo que recibimos
     res.render('inicio', {
@@ -27,10 +28,10 @@ const paginaViajes = async (req, res) => { // req - lo que enviamos : res - lo q
 //muestra un viaje por su slug
 const paginaDetalleViaje = async (req, res) => {
 
-    const {slug} = req.params;
+    const { slug } = req.params;
 
     try {
-        const viaje = await Viaje.findOne({where: { slug }});
+        const viaje = await Viaje.findOne({ where: { slug } });
 
         res.render('viaje', {
             pagina: 'Información Viaje',
@@ -41,10 +42,18 @@ const paginaDetalleViaje = async (req, res) => {
     }
 }
 
-const paginaTestimoniales = (req, res) => { // req - lo que enviamos : res - lo que recibimos 
-    res.render('testimoniales', {
-        pagina: 'Testimoniales'
-    })
+const paginaTestimoniales = async (req, res) => { // req - lo que enviamos : res - lo que recibimos 
+    try {
+        const testimoniales = await Testimonial.findAll();
+        res.render('testimoniales', {
+            pagina: 'Testimoniales',
+            testimoniales
+        })
+    } catch (error) {
+        console.log(error)
+    }
+
+
 }
 
 export {
