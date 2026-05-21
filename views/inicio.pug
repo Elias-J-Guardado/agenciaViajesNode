@@ -1,6 +1,32 @@
 extends ./layout/index
 
+block slider
+    .slider 
+        h1 Río de Janeiro
+        em Aventura 
+
 block contenido 
     main.container.mt-5
-        .row
-            h1= pagina 
+        h2.text-center.mb-5 Sobre nosotros
+        .row.mb-5 
+            .col-md-6
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ut feugiat sapien. Nunc molestie laoreet lorem, sed tincidunt urna facilisis at. Cras porta leo feugiat metus posuere, sed varius nunc varius. Donec dui lacus, varius quis tellus sit amet, maximus viverra mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+                p Fusce et fringilla diam. Proin finibus interdum porta. Etiam mollis sollicitudin faucibus. Nullam rhoncus dui non tristique lacinia. Sed urna risus, dapibus vitae justo nec, ultrices sollicitudin sapien. Pellentesque ut sapien scelerisque nulla facilisis ullamcorper.
+            .col-md-6
+                img(src="/img/inicio_nosotros.jpg", alt="Imagen nosotros" class="img-fluid")
+
+        include ./layout/bloque_viajes
+
+    .descuento 
+        .coontainer 
+            .row 
+                .col-md-6 
+                    .contenido
+                        h3 5% de Descuento
+                        p.titulo Viaje Canada 
+                        p.fecha 20 de Marzo 2027
+                        p.precio $2500
+
+    .container
+        h2.mt-5.text-center Testimoniales 
+            
