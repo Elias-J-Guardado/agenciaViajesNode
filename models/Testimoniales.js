@@ -9,6 +9,7 @@ export const Testimonial = db.define('testimoniales', {
         type: Sequelize.STRING
     },
     mensaje: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
     },
 });
+
