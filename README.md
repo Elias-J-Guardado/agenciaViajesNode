@@ -6,7 +6,7 @@ Este proyecto permite agregar experiencias de viaje simulando el flujo de una em
 - [Descripción](#descripción).
 - [Instalación](#instalación).
 - [Tecnologías](#tecnologías).
-- [Estrucctura](#estrucctura).
+- [Estructura](#estructura).
 
 ## Descripción
 Aplicación que simula la página de una agencia de viajes con visualización desde base de datos de reseñas de usuarios.
@@ -31,12 +31,20 @@ Aplicación que simula la página de una agencia de viajes con visualización de
     DATABASE_URL= "YOUR DATABASE URL"
 ```
 4. Crea la base de datos con sequalize y corre las migraciones
+```
 npx sequelize-cli db:create
 npx sequelize-cli db:migrate
+```
 
 5. Inicia el servidor de desarrollo
 ```bash
     pnpm dev
+```
+
+## Scripts disponibles
+```
+pnpm dev
+pnpm start
 ```
 
 ## Tecnologías
@@ -45,3 +53,32 @@ npx sequelize-cli db:migrate
 - [pug](https://pugjs.org/api/getting-started.html)
 - [sequelize](https://sequelize.org/)
 - [mysql](https://www.mysql.com/)
+
+## Estructura del proyecto
+```
+agenciaViajesNode/
+├── config
+│   └── db.js
+├── controllers
+│   ├── paginasController.js
+│   └── testimonialController.js
+├── index.js
+├── models
+│   ├── Testimoniales.js
+│   └── Viaje.js
+├── package.json
+├── pnpm-lock.yaml
+├── public
+│   ├── css
+│   └── img
+├── README.md
+├── routes
+│   └── index.js
+└── views
+    ├── inicio.pug
+    ├── layout
+    ├── nosotros.pug
+    ├── testimoniales.pug
+    ├── viaje.pug
+    └── viajes.pug
+```
